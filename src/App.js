@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import FormPage from './components/FormPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SearchPage from './components/SearchPage';
+import DataPage from './components/DataPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<FormPage/>}/>
+      <Route path="/search" element={<SearchPage/>}/>
+      <Route path="/data" element={<DataPage/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
